@@ -30,7 +30,7 @@ export async function donate(formaData:FormData){
     })
     
     
-    redirect(preference.sandbox_init_point!)
+    redirect(preference.init_point!)
   }
 
 export async function getDonations() {
