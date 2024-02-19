@@ -23,7 +23,7 @@ export default async function HomePage() {
           </Label>
           <Label className="grid gap-2">
             <span>Tu mensaje en la donación</span>
-            <Textarea name="message"/>
+            <Textarea name="message" required/>
           </Label>
           <Button type="submit">Enviar</Button>
         </form>
