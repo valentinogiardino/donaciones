@@ -15,8 +15,9 @@ export async function POST(request:NextRequest) {
 
     const donation = {
         id: payment.id,
-        payerFirstName: payment.additional_info?.payer?.first_name,
-        payerLastName: payment.additional_info?.payer?.last_name,
+        payerName: payment.card?.cardholder?.name,
+        payerCardId: payment.card?.cardholder?.identification?.number,
+        payerCardType: payment.card?.cardholder?.identification?.type,
         amount: payment.transaction_amount,
         message: payment.description,
         json: payment
