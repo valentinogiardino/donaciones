@@ -27,18 +27,18 @@ export async function POST(request:NextRequest) {
     return Response.json({success: true})
 }
 
-export async function GET() {
-    const donation = {
-        id: 1234,
-        amount: 300,
-        message: "prueba"
-    }
+// export async function GET() {
+//     const donation = {
+//         id: 1234,
+//         amount: 300,
+//         message: "prueba"
+//     }
 
-    const result = await supabase
-    .from('donations')
-    .insert(donation)
+//     const result = await supabase
+//     .from('donations')
+//     .insert(donation)
     
-    console.log("result: ", result)
+//     console.log("result: ", result)
 
-    return Response.json({success: true})
-}
+//     return Response.json({success: true})
+// }

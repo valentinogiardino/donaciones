@@ -23,6 +23,8 @@ module.exports = {
     },
   },
   rules: {
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-empty-interface": "off",
     "prettier/prettier": [
       "warn",
       {

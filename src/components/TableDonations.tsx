@@ -9,6 +9,7 @@ import {
     TableRow,
   } from "@/components/ui/table"
 import { Donation } from "@/interfaces/Donation";
+import { toLocalCurrency } from "@/lib/utils";
   
   
 
@@ -30,14 +31,14 @@ import { Donation } from "@/interfaces/Donation";
             <TableRow key={donation.id}>
               <TableCell className="">{donation.message}</TableCell>
               <TableCell >{new Date(donation.created_at).toLocaleString()}</TableCell>
-              <TableCell className="font-bold">{donation.amount.toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</TableCell>
+              <TableCell className="font-bold">{toLocalCurrency(donation.amount)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TableCell colSpan={2}>Total</TableCell>
-            <TableCell>{totalAmount.toLocaleString('es-AR', {style: 'currency', currency: 'ARS'})}</TableCell>
+            <TableCell>{toLocalCurrency(totalAmount)}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

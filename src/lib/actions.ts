@@ -6,7 +6,7 @@ import MercadoPagoConfig, { Preference } from "mercadopago"
 import { redirect } from "next/navigation"
 
 
-export async function donate(formaData:FormData) {
+export async function donate(formaData:FormData){
     'use server'
     const client = mercadopago
 
@@ -20,7 +20,13 @@ export async function donate(formaData:FormData) {
             unit_price: Number(formaData.get("amount"))
           }
         ],
-      }
+        back_urls: {
+          success: "https://www.tu-sitio/",
+          failure: "http://www.tu-sitio/payment/failure",
+          pending: "http://www.tu-sitio/pending"
+        },
+        auto_return: "approved",
+      },
     })
     
     
@@ -33,6 +39,5 @@ export async function getDonations() {
         .select('*')
         .order('created_at', { ascending: false })
         .then(({data})=> data as unknown as Promise<Donation[]>);
-        console.log(donations)
     return donations
 }
