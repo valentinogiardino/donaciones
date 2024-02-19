@@ -27,6 +27,7 @@ export default async function HomePage() {
           </Label>
           <Button type="submit">Enviar</Button>
         </form>
+        <h2 className="items-center text-center text-lg font-bold">Historial de Donaciones</h2>
         <TableDonations donations={donations}/>
       </section>
     <NotificationComponent />
