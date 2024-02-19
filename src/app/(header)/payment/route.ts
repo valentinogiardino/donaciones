@@ -6,9 +6,10 @@ const client = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN!
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SECRET!)
 
 export async function POST(request:NextRequest) {
-    const body = await request.json().then(data => data as {data: {id: string}})
     // const secret = request.headers.get("x-signature-id");
-    // if(secret !== process.env.SECRET) return Response.json({success: false})
+    // if(secret !== process.env.MP_WH_SECRET) return Response.json({success: false})
+    
+    const body = await request.json().then(data => data as {data: {id: string}})
     const payment = await new Payment(client).get({id: body.data.id})
     console.log('payment:', payment)
 
