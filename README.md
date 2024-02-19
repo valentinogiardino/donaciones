@@ -1,6 +1,11 @@
 ## Getting Started with donancy
+create a .env file like this: 
 
-First, run the development server:
+MP_ACCESS_TOKEN=""
+NEXT_PUBLIC_SUPABASE_KEY=""
+SUPABASE_SECRET=""
+NEXT_PUBLIC_SUPABASE_URL=""
+Run the development server:
 
 ```bash
 npm run dev
