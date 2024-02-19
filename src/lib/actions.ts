@@ -21,9 +21,9 @@ export async function donate(formaData:FormData){
           }
         ],
         back_urls: {
-          success: "https://www.tu-sitio/",
-          failure: "http://www.tu-sitio/payment/failure",
-          pending: "http://www.tu-sitio/pending"
+          success: "https://donations-giardi-kappa.vercel.app/",
+          failure: "https://donations-giardi-kappa.vercel.app/payment/failure",
+          pending: "https://donations-giardi-kappa.vercel.app/payment/pending"
         },
         auto_return: "approved",
       },
