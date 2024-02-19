@@ -21,9 +21,9 @@ export async function donate(formaData:FormData){
           }
         ],
         back_urls: {
-          success: "https://donations-giardi-kappa.vercel.app/",
-          failure: "https://donations-giardi-kappa.vercel.app/payment/failure",
-          pending: "https://donations-giardi-kappa.vercel.app/payment/pending"
+          success: "https://donations-vgiardino.vercel.app",
+          failure: "https://donations-vgiardino.vercel.app/payment/failure",
+          pending: "https://donations-vgiardino.vercel.app/payment/pending"
         },
         auto_return: "approved",
       },
