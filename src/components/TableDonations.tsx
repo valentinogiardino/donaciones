@@ -30,7 +30,7 @@ import { toLocalCurrency } from "@/lib/utils";
           {donations.map((donation) => (
             <TableRow key={donation.id}>
               <TableCell className="">{donation.message}</TableCell>
-              <TableCell >{new Date(donation.created_at).toLocaleString()}</TableCell>
+              <TableCell>{new Date(donation.created_at).toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' })}</TableCell>
               <TableCell className="font-bold">{toLocalCurrency(donation.amount)}</TableCell>
             </TableRow>
           ))}

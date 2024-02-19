@@ -6,7 +6,7 @@ import MercadoPagoConfig, { Preference } from "mercadopago"
 import { redirect } from "next/navigation"
 
 
-export async function donate(formaData:FormData){
+export async function donate(formData:FormData){
     'use server'
     const client = mercadopago
 
@@ -15,14 +15,14 @@ export async function donate(formaData:FormData){
         items: [
           {
             id: 'donacion',
-            title: formaData.get("message") as string,
+            title: formData.get("message") as string,
             quantity: 1,
-            unit_price: Number(formaData.get("amount"))
+            unit_price: Number(formData.get("amount"))
           }
         ],
         back_urls: {
           success: "https://donations-vgiardino.vercel.app",
-          failure: "https://donations-vgiardino.vercel.app/payment/failure",
+          failure: "https://donations-vgiardino.vercel.app",
           pending: "https://donations-vgiardino.vercel.app/payment/pending"
         },
         auto_return: "approved",

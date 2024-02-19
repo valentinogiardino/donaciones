@@ -19,7 +19,7 @@ export default async function HomePage() {
           <p className="text-center font-bold font-serif text-lg">Puedes colaborar con <span className="text-orange-600">Valentino Giardino</span> donándole dinero</p>
           <Label className="grid gap-2">
             <span>Valor</span>
-            <Input type="number" name="amount"/>
+            <Input type="number" name="amount" required min={10}/>
           </Label>
           <Label className="grid gap-2">
             <span>Tu mensaje en la donación</span>
